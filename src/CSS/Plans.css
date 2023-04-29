@@ -1,0 +1,40 @@
+
+
+.plan-cont {
+  width: 170px;
+  height: 200px;
+  border: 1.5px solid var(--Cool-gray);
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 18px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
+}
+.plan-cont:focus{
+  border-color: var(--Purplish-blue);
+  background-color: var(--Magnolia);
+}
+
+.free-months {
+  color: var(--Marine-blue);
+  font-size: 14px;
+  font-weight: var(--fw-400);
+}
+
+.tier {
+  font-size: 18px;
+  color: var(--Marine-blue);
+  font-weight: 500;
+}
+
+.price {
+  color: var(--Cool-gray);
+  font-size: 16px;
+}
+
+.tiers {
+  line-height: 23px;
+}

@@ -1,0 +1,84 @@
+input[type="checkbox"] {
+  margin: 0;
+  width: 10px;
+
+
+}
+.label-toggle {
+  width: 55px;
+  height: 24px;
+  background-color: var(--Marine-blue);
+  border-radius: 40px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.label-toggle::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  top: 4px;
+
+  left: 6px;
+  background-color: #fff;
+  transition: all 0.4s;
+
+}
+
+#toggle:checked + .label-toggle::after{
+  /* transform: translateX(30px); */
+  left: 32px;
+}
+
+
+.buttons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  margin-top: 125.5px;
+}
+
+button {
+  padding: 16px 10px;
+  width: 120px;
+background-color: var(--Marine-blue);
+color: #fff;
+border-radius: 12px;
+border: none;
+align-self: flex-end;
+margin-top: 100px;
+font-size: 16px;
+font-family: var(--font);
+cursor: pointer;
+}
+
+.back-text {
+  text-decoration: none;
+  color: var(--Cool-gray);
+}
+
+.toggle-wrapper{
+  display: flex;
+  gap: 10px ;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-inline: 100px  ;
+  height: 50px;
+  background-color: var(--Magnolia);
+}
+
+#billing {
+margin: 0;
+
+
+}
+
+.tiers-wrapper {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 40px;
+}

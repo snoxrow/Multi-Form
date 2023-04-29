@@ -1,0 +1,85 @@
+:root {
+  --font: 'Ubuntu', sans-serif;
+  --fw-400: 400; 
+  --fw-500: 500; 
+  --fw-700: 700; 
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+--Pastel-blue: hsl(228, 100%, 84%);
+--Light-blue: hsl(206, 94%, 87%);
+--Strawberry-red: hsl(354, 84%, 57%);
+
+--Cool-gray: hsl(231, 11%, 63%);
+--Light-gray: hsl(229, 24%, 87%);
+--Magnolia: hsl(217, 100%, 97%);
+--Alabaster: hsl(231, 100%, 99%);
+--White: hsl(0, 0%, 100%);
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+input {
+  padding: 14px;
+  border-radius: 7px;
+  border: 1px solid var(--Light-gray);
+  margin-bottom: 30px;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+input::placeholder {
+  font-size: 16px;
+  font-weight: var(--fw-400);
+  color: var(--Cool-gray);
+}
+label {
+  font-size: 16px;
+  color: var(--Marine-blue);
+  font-weight: var(--fw-400);
+  text-transform: capitalize;
+
+}
+
+form button {
+  padding: 16px 10px;
+  width: 120px;
+background-color: var(--Marine-blue);
+color: #fff;
+border-radius: 12px;
+border: none;
+align-self: flex-end;
+margin-top: 100px;
+font-size: 16px;
+font-family: var(--font);
+cursor: pointer;
+}
+
+input:user-invalid {
+  border-color: red;
+
+}
+
+input:focus {
+  border:1px solid var(--Purplish-blue);
+}
+
+.error-msg {
+  position: absolute;
+  top: 8px;
+  right: 0;
+  font-size: 12px;
+color: red;
+
+}
+
+.input-field {
+  position: relative;
+} 
+
+

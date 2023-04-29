@@ -1,0 +1,62 @@
+:root {
+  --font: 'Ubuntu', sans-serif;
+  --fw-400: 400; 
+  --fw-500: 500; 
+  --fw-700: 700; 
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+--Pastel-blue: hsl(228, 100%, 84%);
+--Light-blue: hsl(206, 94%, 87%);
+--Strawberry-red: hsl(354, 84%, 57%);
+
+--Cool-gray: hsl(231, 11%, 63%);
+--Light-gray: hsl(229, 24%, 87%);
+--Magnolia: hsl(217, 100%, 97%);
+--Alabaster: hsl(231, 100%, 99%);
+--White: hsl(0, 0%, 100%);
+}
+
+.container-steps {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  height: fit-content;
+
+}
+
+.stepnum {
+  width: 40px;
+  height:40px;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.6px solid white;
+  color: #fff;
+ 
+}
+.stage {
+  line-height: 5px;
+
+}
+.stage div {
+  font-weight: var(--fw-400);
+  color: var(--Light-gray);
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+.stage p {
+  font-weight: var(--fw-700);
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+
+}
+
+.active-step {
+  background-color: var(--Light-blue);
+color: var(--Marine-blue);
+border: none;
+}

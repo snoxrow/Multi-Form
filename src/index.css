@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: url(./assets/fonts/Ubuntu-Bold.ttf);
+  font-weight: var(--fw-700);
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url(./assets/fonts/Ubuntu-Regular.ttf);
+  font-weight: var(--fw-400);
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url(./assets/fonts/Ubuntu-Medium.ttf);
+  font-weight: var(--fw-500);
+}
+:root {
+  --font: 'Ubuntu', sans-serif;
+  --fw-400: 400; 
+  --fw-500: 500; 
+  --fw-700: 700; 
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+--Pastel-blue: hsl(228, 100%, 84%);
+--Light-blue: hsl(206, 94%, 87%);
+--Strawberry-red: hsl(354, 84%, 57%);
+
+--Cool-gray: hsl(231, 11%, 63%);
+--Light-gray: hsl(229, 24%, 87%);
+--Magnolia: hsl(217, 100%, 97%);
+--Alabaster: hsl(231, 100%, 99%);
+--White: hsl(0, 0%, 100%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  font-family: var(--font);
+}
+
+.container {
+  display: flex;
+  width: 1440px;
+  height: 810px;
+  border: 1px solid red;
+  padding: 18px 24px; 
+  border-radius: 12px;
+}
+
+/* Left Side CSS*/ 
+
+.left-side {
+width: 330px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px ;
+  justify-content: flex-start;
+  padding-left: 40px;
+  padding-top: 40px;
+  background: url("./assets/images/bg-sidebar-desktop.svg") no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+
+}
+
+/* Right Side CSS*/ 
+
+.right-side {
+  padding-left: 200px;
+  width: 700px;
+  padding-top: 90px;
+}
+
+.right-side p {
+  color: var(--Cool-gray);
+  font-size: 16px;
+  font-weight: var(--fw-400);
+  margin-top: 20px;
+
+}
+
+.heading {
+  margin-bottom: 50px;
+  color:var(--Marine-blue);
+
+}
