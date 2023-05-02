@@ -2,6 +2,7 @@ import { useState } from "react";
 import InputField from "../components/InputField";
 import { useNavigate } from "react-router-dom";
 import Heading from "../components/Heading";
+import { useEffect } from "react";
 
 const Step1 = () => {
   const [inputValues, setInputValues] = useState({
@@ -9,6 +10,9 @@ const Step1 = () => {
     email: "",
     phone: "",
   });
+  useEffect(()=> {
+    
+  })
 
   const navigate = useNavigate();
 
@@ -17,6 +21,10 @@ const Step1 = () => {
     temp[key] = value;
     setInputValues(temp);
   };
+
+  const updateInfo = (key, value) => {
+    localStorage.setItem(key, value)
+  }
   return (
     <div>
       <Heading
@@ -27,7 +35,10 @@ const Step1 = () => {
         className="form-container"
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(inputValues);
+          updateInfo("name" , inputValues.name)
+          updateInfo("email" , inputValues.email)
+          updateInfo("phone" , inputValues.phone)
+          
         }}
       >
         <InputField

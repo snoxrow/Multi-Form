@@ -5,6 +5,14 @@ import { useNavigate } from "react-router-dom";
 
 const Buttons = ({pathBack, pathFor}) => {
   const navigate = useNavigate();
+  
+  // onClick={() => {
+  //   if (allCheck) {
+  //     navigate(pathFor);
+  //   } else {
+  //     alert('Please select an option!')
+  //   }
+  // }}
 
   return (
     <div className="buttons">

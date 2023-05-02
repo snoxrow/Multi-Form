@@ -10,6 +10,7 @@ import Buttons from "../components/Buttons";
 const Step2 = () => {
   const [checked, setChecked] = useState(false);
   const [selected, setSelected] = useState("");
+
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
@@ -58,7 +59,7 @@ const Step2 = () => {
     // console.log(typeof(billing));
     // console.log(typeof(tier));
     // console.log(tier);
-  }, []);
+  }, [checked]);
 
   
 
