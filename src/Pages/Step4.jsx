@@ -25,35 +25,43 @@ const Step4 = () => {
     option1 === "true" ? setOption1(true) : setOption1(false);
     option2 === "true" ? setOption2(true) : setOption2(false);
     option3 === "true" ? setOption3(true) : setOption3(false);
-    let total = parseInt(price);
+  let tempTotal = "";
 
     switch (selectedTier) {
       case "1":
         setTier("Arcade");
         setPrice(timeSelected ? "90" : "9");
+        tempTotal = timeSelected ? "90" : "9" ;
         break;
       case "2":
         setTier("Advanced");
         setPrice(timeSelected ? "120" : "12");
+        tempTotal = timeSelected ? "120" : "12" ;
         break;
       case "3":
         setTier("Pro");
         setPrice(timeSelected ? "150" : "15");
+        tempTotal = timeSelected ? "150" : "15" ;
         break;
     }
-     if (option1 ) {
-       total += 2
-     }
-     if (option2 ) {
-       total += 2
-     }
-     if (option3 ) {
-       total += 2
-     }
-    setTotal(total)
-      console.log(total)
-  });
+     
+    tempTotal = parseInt(tempTotal)
 
+     if ( option1 === "true" ) {
+       tempTotal += timeSelected ? 10 : 1;
+     }
+     if ( option2 === "true" ) {
+       tempTotal += timeSelected ? 20 : 2;
+     }
+     if ( option3 === "true" ) {
+       tempTotal += timeSelected ? 20 : 2;
+     }
+    setTotal(tempTotal)
+      console.log(tempTotal)
+      
+  },[total]);
+  
+  
   return (
     <div>
       <Heading
@@ -97,14 +105,14 @@ const Step4 = () => {
             <p>+${timeSelected ? "20/yr" : "2/mo"}</p>
           </div>
         </div>
-        <div className="total-cont">Total per {timeSelected ? "year" : "month"}
-          <p id="total">+$ {  total}</p>
+        <div className="total-cont">Total ( per {timeSelected ? "year" : "month"})
+          <p id="total">+$  {  total } /{timeSelected ? "yr" : "mo"}</p>
         </div>
       </div>
       <div className="btn-wrapper">
         <Buttons
-          pathBack="/step3"
-          pathFor="/step4"
+          pathBack="/addons"
+          pathFor="/confirmation"
           text="Confirm"
           btnId="Step4-btn"
         />

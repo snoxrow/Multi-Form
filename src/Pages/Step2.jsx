@@ -137,7 +137,7 @@ const Step2 = () => {
           Yearly
         </p>
       </div>
-      <Buttons pathBack="/" pathFor="/step3" text="Next Step" check={!checkStep}/>
+      <Buttons pathBack="/" pathFor="/addons" text="Next Step" check={!checkStep}/>
     </div>
   );
 };

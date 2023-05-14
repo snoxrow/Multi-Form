@@ -2,7 +2,7 @@
 import "../CSS/inputField.css";
 
 // eslint-disable-next-line react/prop-types
-const InputField = ({ title, type, plchldr, label, onchange, value }) => {
+const InputField = ({ title, type, plchldr, label, onchange, value, error }) => {
   
 
   return (
@@ -16,7 +16,7 @@ const InputField = ({ title, type, plchldr, label, onchange, value }) => {
         //     : { visibility: "hidden" }
         // }
       >
-        This Field is required
+        {error}
       </div>
       <input
         onChange={e => {
