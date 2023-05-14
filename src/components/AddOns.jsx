@@ -14,7 +14,7 @@ const AddOns = ({ addon, title, p, billing, amnt, onfocus, option}) => {
           </div>
 
         </div>
-        <div className="right-addon"> +${billing ? amnt+"/yr" : amnt+"/mo"}</div>
+        <div className="right-addon"> +${amnt + (billing ? "/yr" :"/mo")}</div>
       </label>
     </div>
     </>

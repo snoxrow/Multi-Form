@@ -69,7 +69,7 @@ useEffect(()=> {
 
           option={option3}
       />
-      <Buttons pathBack="/step2" pathFor="/step4" />
+      <Buttons pathBack="/step2" pathFor="/step4" text="Next Step" check={false}/>
     </div>
   );
 };

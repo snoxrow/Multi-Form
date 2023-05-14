@@ -8,12 +8,15 @@ import Pro from "../assets/images/icon-pro.svg";
 import Buttons from "../components/Buttons";
 
 const Step2 = () => {
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(true);
   const [selected, setSelected] = useState("");
+  const [checkStep, setCheckStep] = useState(false);
+
 
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const ref3 = useRef(null);
+
 
 
   // const asyncLocalStorage = {
@@ -26,9 +29,12 @@ const Step2 = () => {
   //       return localStorage.getItem(key)
   //   }
   // }
+
   useEffect(() => {
     const tier = localStorage.getItem("tier");
+
     let billing = localStorage.getItem("checked");
+
 
     if (billing === "false") {
       billing = false ; 
@@ -55,13 +61,14 @@ const Step2 = () => {
       default:
         null;
     }
+    (tier === null) ? setCheckStep(false) : setCheckStep(true)
+
 
     // console.log(typeof(billing));
     // console.log(typeof(tier));
     // console.log(tier);
-  }, [checked]);
+  }, [checked, selected]);
 
-  
 
   const select = (e) => {
     const index = e.target.tabIndex;
@@ -85,6 +92,7 @@ const Step2 = () => {
           onclick={select}
           checkSelected={selected}
           ref={ref1}
+
         />
         <Plans
           num="2"
@@ -122,14 +130,14 @@ const Step2 = () => {
     localStorage.setItem("checked", !checked);
 
           }}
-          checked={checked}
+          checked={ checked}
         />
         <label htmlFor="toggle" className="label-toggle"></label>
         <p id="billing" style={{ color: checked && "hsl(213, 96%, 18%)" }}>
           Yearly
         </p>
       </div>
-      <Buttons pathBack="/" pathFor="/step3" />
+      <Buttons pathBack="/" pathFor="/step3" text="Next Step" check={!checkStep}/>
     </div>
   );
 };

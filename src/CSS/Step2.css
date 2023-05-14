@@ -60,6 +60,9 @@ cursor: pointer;
   color: var(--Cool-gray);
 }
 
+.back-text:hover {
+  color: var(--Marine-blue);
+}
 .toggle-wrapper{
   display: flex;
   gap: 10px ;

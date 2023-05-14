@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
+
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 
-const Buttons = ({pathBack, pathFor}) => {
+const Buttons = ({pathBack, pathFor, text, btnId, check}) => {
   const navigate = useNavigate();
   
   // onClick={() => {
@@ -13,13 +14,24 @@ const Buttons = ({pathBack, pathFor}) => {
   //     alert('Please select an option!')
   //   }
   // }}
+  // const currentPath = useLocation()
 
   return (
     <div className="buttons">
         <Link className="back-text" to={pathBack}>
           Go Back
         </Link>
-        <button onClick={() => navigate(pathFor)}> Next Step </button>
+        <button  id={btnId} onClick={(e) => {
+          e.preventDefault()
+          if (check) {
+
+            alert("Please select an option")
+          }
+           else {
+          navigate(pathFor)
+
+
+           }  }}> {text} </button>
       </div>
   )
 }

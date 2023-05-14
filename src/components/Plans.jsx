@@ -13,7 +13,7 @@ const Plans = forwardRef( function Plans ({icon, tier, num, checked, yearly, mon
   return (
     <div
     tabIndex={num}
-      className="plan-cont" onFocus={ onclick} ref={ref}>
+      className="plan-cont" onFocus={ onclick} ref={ref} >
       <div>
         <img src={icon} />
       </div>

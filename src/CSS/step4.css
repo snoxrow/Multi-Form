@@ -1,0 +1,60 @@
+.summary-addons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.total-wrapper {
+  position: relative;
+  height: fit-content;
+}
+
+#change-link {
+  color: var(--Cool-gray);
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+#summary-p {
+  margin: 0;
+  color: var(--Marine-blue) ;
+  display: flex;
+  flex-direction: column;
+}
+
+.summary {
+  background-color: var(--Magnolia);
+  width: 500px;
+  border-radius: 10px;
+  padding: 14px;
+  height: fit-content;
+  margin-bottom: auto;
+}
+
+.addons-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#Step4-btn:hover {
+  opacity: 70%;
+}
+
+#Step4-btn {
+  background-color: var(--Purplish-blue);
+}
+
+.total-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+
+}
+
+#total {
+  margin: 0;
+  color: var(--Purplish-blue);
+}
