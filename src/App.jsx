@@ -18,7 +18,7 @@ function App() {
         <Steps num="1" disc="your info" selected={currentPath.pathname == '/' && true} />
         <Steps num="2" disc="select plan" selected={currentPath.pathname == '/plans' && true}/>
         <Steps num="3" disc="add-ons" selected={currentPath.pathname == '/addons' && true}/>
-        <Steps num="4" disc="summary" selected={currentPath.pathname == '/summary' || '/confirmation' && true}/>
+        <Steps num="4" disc="summary" selected={currentPath.pathname == '/summary' || currentPath.pathname == '/confirmation'  && true}/>
       </div>
       <div className="right-side">
       <Routes>

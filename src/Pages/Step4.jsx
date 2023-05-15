@@ -115,6 +115,7 @@ const Step4 = () => {
           pathFor="/confirmation"
           text="Confirm"
           btnId="Step4-btn"
+          onclick={()=> localStorage.clear()}
         />
       </div>
     </div>

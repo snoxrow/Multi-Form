@@ -3,10 +3,9 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-
-const Buttons = ({pathBack, pathFor, text, btnId, check}) => {
+const Buttons = ({ pathBack, pathFor, text, btnId, check, onclick }) => {
   const navigate = useNavigate();
-  
+
   // onClick={() => {
   //   if (allCheck) {
   //     navigate(pathFor);
@@ -17,23 +16,26 @@ const Buttons = ({pathBack, pathFor, text, btnId, check}) => {
   // const currentPath = useLocation()
 
   return (
-    <div className="buttons">
-        <Link className="back-text" to={pathBack}>
-          Go Back
-        </Link>
-        <button  id={btnId} onClick={(e) => {
-          e.preventDefault()
+    <div className="buttons" onClick={onclick}>
+      <Link className="back-text" to={pathBack}>
+        Go Back
+      </Link>
+      <button
+        id={btnId}
+        onClick={(e) => {
+          e.preventDefault();
           if (check) {
-
-            alert("Please select an option")
+            alert("Please select an option");
+          } else {
+            navigate(pathFor);
           }
-           else {
-          navigate(pathFor)
+        }}
+      >
+        {" "}
+        {text}{" "}
+      </button>
+    </div>
+  );
+};
 
-
-           }  }}> {text} </button>
-      </div>
-  )
-}
-
-export default Buttons
+export default Buttons;
