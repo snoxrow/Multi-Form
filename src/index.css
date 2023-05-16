@@ -40,15 +40,16 @@ body {
   display: grid;
   place-items: center;
   font-family: var(--font);
+  height: 100vh;
 }
 
 .container {
   display: flex;
   width: 1440px;
   height: 810px;
-  border: 1px solid red;
   padding: 18px 24px; 
   border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 /* Left Side CSS*/ 

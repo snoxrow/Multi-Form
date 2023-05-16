@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import AddOns from "../components/addOns";
+import AddOns from "../components/AddOns";
 import Buttons from "../components/Buttons";
 import Heading from "../components/Heading";
 
