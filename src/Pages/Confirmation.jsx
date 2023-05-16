@@ -26,6 +26,7 @@ const Confirmation = () => {
         onClick={() => {
           navigate("/");
         }}
+        style={{position: "absolute", bottom: "14%"}}
       >
         {" "}
         Return

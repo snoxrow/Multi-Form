@@ -5,13 +5,13 @@ import Buttons from "../components/Buttons";
 import Heading from "../components/Heading";
 
 const Step3 = () => {
-const [billing, setBilling] = useState()
+const [billing, setBilling] = useState(true)
 const [option1, setOption1] = useState(false)
 const [option2, setOption2] = useState(false)
 const [option3, setOption3] = useState(false)
 
 useEffect(()=> {
-  const billing = localStorage.getItem("checked"); 
+  const billedBasis = localStorage.getItem("checked"); 
   const Option1 = localStorage.getItem("option1"); 
   const Option2 = localStorage.getItem("option2"); 
   const Option3 = localStorage.getItem("option3"); 
@@ -20,7 +20,7 @@ useEffect(()=> {
   setOption2(Option2 === "true" ? true : false)
   setOption3(Option3 === "true" ? true : false)
 
-  setBilling(billing === "true" ? true : false)
+  setBilling(billedBasis === "true"  ? true : false)
 },[])
 
   const updateAddOns = (key,option) => {

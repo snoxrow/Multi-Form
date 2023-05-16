@@ -8,7 +8,7 @@ import Pro from "../assets/images/icon-pro.svg";
 import Buttons from "../components/Buttons";
 
 const Step2 = () => {
-  const [checked, setChecked] = useState(true);
+  const [checked, setChecked] = useState(false);
   const [selected, setSelected] = useState("");
   const [checkStep, setCheckStep] = useState(false);
 
@@ -130,7 +130,7 @@ const Step2 = () => {
     localStorage.setItem("checked", !checked);
 
           }}
-          checked={ checked}
+          checked={checked}
         />
         <label htmlFor="toggle" className="label-toggle"></label>
         <p id="billing" style={{ color: checked && "hsl(213, 96%, 18%)" }}>

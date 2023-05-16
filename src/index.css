@@ -71,6 +71,7 @@ width: 330px;
 /* Right Side CSS*/ 
 
 .right-side {
+  position: relative;
   padding-left: 200px;
   width: 700px;
   padding-top: 90px;

@@ -145,7 +145,7 @@ const Step1 = () => {
           error={inputErrors.phone} 
         />
 
-        <button type="submit" onClick={() => onSubmit()}>
+        <button type="submit" onClick={() => onSubmit()} style={{position: "absolute", bottom: "14%"}}>
           Next Step
         </button>
       </form>
