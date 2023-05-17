@@ -2,7 +2,6 @@ input[type="checkbox"] {
   margin: 0;
   width: 10px;
   display: none;
-
 }
 .label-toggle {
   width: 55px;
@@ -24,16 +23,14 @@ input[type="checkbox"] {
   left: 6px;
   background-color: #fff;
   transition: all 0.4s;
-
 }
 
-#toggle:checked + .label-toggle::after{
+#toggle:checked + .label-toggle::after {
   /* transform: translateX(30px); */
   left: 32px;
 }
 
-
-.buttons{
+.buttons {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,14 +45,14 @@ input[type="checkbox"] {
 button {
   padding: 16px 10px;
   width: 120px;
-background-color: var(--Marine-blue);
-color: #fff;
-border-radius: 12px;
-border: none;
-align-self: flex-end;
-font-size: 16px;
-font-family: var(--font);
-cursor: pointer;
+  background-color: var(--Marine-blue);
+  color: #fff;
+  border-radius: 12px;
+  border: none;
+  align-self: flex-end;
+  font-size: 16px;
+  font-family: var(--font);
+  cursor: pointer;
 }
 
 .back-text {
@@ -66,12 +63,12 @@ cursor: pointer;
 .back-text:hover {
   color: var(--Marine-blue);
 }
-.toggle-wrapper{
+.toggle-wrapper {
   display: flex;
-  gap: 10px ;
+  gap: 10px;
   align-items: center;
   justify-content: space-evenly;
-  padding-inline: 100px  ;
+  padding-inline: 100px;
   height: 50px;
   background-color: var(--Magnolia);
   border-radius: 8px;
@@ -79,9 +76,7 @@ cursor: pointer;
 }
 
 #billing {
-margin: 0;
-
-
+  margin: 0;
 }
 
 .tiers-wrapper {
@@ -89,4 +84,19 @@ margin: 0;
   gap: 16px;
   align-items: center;
   margin-bottom: 43px;
+}
+
+@media (max-width: 430px) {
+  .buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 25px 14px;
+    height: 60px;
+  }
+  .tiers-wrapper {
+    flex-direction: column;
+  }
 }

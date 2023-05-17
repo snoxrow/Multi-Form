@@ -38,3 +38,21 @@
 .tiers {
   line-height: 23px;
 }
+
+@media (max-width: 430px) {
+  .plan-cont {
+    width: 100%;
+    height: fit-content;
+    flex-direction: row;
+    justify-content: start;
+    gap: 20px;
+    align-items: center;
+    padding: 14px;
+  }
+
+  .tier {
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+}

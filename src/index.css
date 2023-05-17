@@ -90,3 +90,44 @@ width: 330px;
   color:var(--Marine-blue);
 
 }
+
+
+@media (max-width: 430px) {
+
+  body {
+    width: 430px;
+    position: relative;
+  }
+  .container {
+    width: 100vw;
+    flex-direction: column;
+    height: 100% ;
+    padding: 0;
+    box-shadow: none;
+    background-color: var(--Magnolia);
+    padding-top: 100px;
+  }
+
+  .left-side{
+    width: 100%;
+    flex-direction: row;
+  background: url("./assets/images/bg-sidebar-mobile.svg") no-repeat;
+  gap: 0px;
+  position: absolute;
+  top: 0;
+  height: 30%;
+  
+ 
+  }
+
+  .right-side {
+    
+    background-color: #fff;
+    width: fit-content;
+    margin: 14px;
+    padding: 25px 15px;
+    border-radius: 18px;
+  }
+
+  
+}

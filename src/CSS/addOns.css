@@ -85,3 +85,11 @@
   transform: rotate(45deg);
 }
 
+@media (max-width: 430px) {
+  .addOns {
+    width: 100%;
+  }
+  .text-addon h1, .text-addon p {
+    font-size: 14px;
+  }
+}

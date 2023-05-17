@@ -5,7 +5,7 @@ const Steps = ({num, disc, selected}) => {
   return (
     <div className="container-steps"> 
       <div className={selected ? "stepnum active-step" : "stepnum"}>{num}</div>
-      <div className="stage">
+      <div className="stage" >
          <div>Step {num}</div>
         <p>{disc}</p>
       </div>
