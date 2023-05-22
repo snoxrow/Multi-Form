@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import Heading from "../components/Heading";
 import { useEffect } from "react";
 
-
 const Step1 = () => {
   const [inputValues, setInputValues] = useState({
     name: "",
@@ -19,14 +18,19 @@ const Step1 = () => {
   });
 
   useEffect(() => {
+    let tempState = Object.assign({}, inputValues);
 
-    let tempState = Object.assign({}, inputValues)
+    tempState.name = localStorage.getItem("name")
+      ? localStorage.getItem("name")
+      : "";
+    tempState.email = localStorage.getItem("email")
+      ? localStorage.getItem("email")
+      : "";
+    tempState.phone = localStorage.getItem("phone")
+      ? localStorage.getItem("phone")
+      : "";
 
-    tempState.name = localStorage.getItem("name") ? localStorage.getItem("name"): "";
-    tempState.email = localStorage.getItem("email") ? localStorage.getItem("email"): "";
-    tempState.phone = localStorage.getItem("phone") ? localStorage.getItem("phone"): "";
-  
-      setInputValues(tempState)
+    setInputValues(tempState);
   }, []);
 
   const navigate = useNavigate();
@@ -35,24 +39,23 @@ const Step1 = () => {
     let temp = Object.assign({}, inputValues);
     let tempErr = Object.assign({}, inputErrors);
     temp[key] = value;
-    if (temp.name === "" ) {
-      tempErr.name = "This Field is required"
+    if (temp.name === "") {
+      tempErr.name = "This Field is required";
     } else {
-      tempErr.name = ""
+      tempErr.name = "";
     }
 
-    if (temp.email === "" ) {
-      tempErr.email = "This Field is required"
+    if (temp.email === "") {
+      tempErr.email = "This Field is required";
     } else {
-      tempErr.email = ""
+      tempErr.email = "";
     }
 
-    if (temp.phone === "" ) {
-      tempErr.phone = "This Field is required"
+    if (temp.phone === "") {
+      tempErr.phone = "This Field is required";
     } else {
-      tempErr.phone = ""
+      tempErr.phone = "";
     }
-    
 
     setInputErrors(tempErr);
     setInputValues(temp);
@@ -62,10 +65,7 @@ const Step1 = () => {
     localStorage.setItem(key, value);
   };
 
- 
-
   const onSubmit = () => {
-
     let tempErr = Object.assign({}, inputErrors);
 
     let isValid = true;
@@ -73,37 +73,39 @@ const Step1 = () => {
     updateInfo("email", inputValues.email);
     updateInfo("phone", inputValues.phone);
 
-    if (inputValues.name === "" ) {
-      tempErr.name = "This Field is required"
-      isValid = false
+    if (inputValues.name === "") {
+      tempErr.name = "This Field is required";
+      isValid = false;
     } else {
-      tempErr.name = "" 
-      
+      tempErr.name = "";
     }
 
-    if (inputValues.email === "" ) {
-      tempErr.email = "This Field is required"
-      isValid = false
-
+    if (inputValues.email === "") {
+      tempErr.email = "This Field is required";
+      isValid = false;
+    } else if (
+      !/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/.test(
+        inputValues.email
+      )
+    ) {
+      tempErr.email = "Invalid Format";
+      isValid = false;
     } else {
-      tempErr.email = ""
+      tempErr.email = "";
     }
 
-    if (inputValues.phone === "" ) {
-      tempErr.phone = "This Field is required"
-      isValid = false
-
+    if (inputValues.phone === "") {
+      tempErr.phone = "This Field is required";
+      isValid = false;
     } else {
-      tempErr.phone = ""
+      tempErr.phone = "";
     }
 
     setInputErrors(tempErr);
 
-
     if (isValid) {
-
-    
-    navigate("/plans")} 
+      navigate("/plans");
+    }
   };
   return (
     <div>
@@ -124,7 +126,7 @@ const Step1 = () => {
           label="name"
           onchange={(value) => handleOnChange("name", value)}
           value={inputValues.name}
-          error={inputErrors.name} 
+          error={inputErrors.name}
         />
         <InputField
           title="email"
@@ -133,7 +135,8 @@ const Step1 = () => {
           label="email"
           onchange={(value) => handleOnChange("email", value)}
           value={inputValues.email}
-          error={inputErrors.email} 
+          error={inputErrors.email}
+          pattern=""
         />
         <InputField
           title="phone"
@@ -142,10 +145,15 @@ const Step1 = () => {
           label="phone number"
           onchange={(value) => handleOnChange("phone", value)}
           value={inputValues.phone}
-          error={inputErrors.phone} 
+          error={inputErrors.phone}
         />
 
-        <button  id="step1-btn" type="submit" onClick={() => onSubmit()} style={{position: "absolute", bottom: "-42%"}}>
+        <button
+          id="step1-btn"
+          type="submit"
+          onClick={() => onSubmit()}
+          style={{ position: "absolute", bottom: "-42%" }}
+        >
           Next Step
         </button>
       </form>

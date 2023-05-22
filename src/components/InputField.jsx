@@ -2,7 +2,7 @@
 import "../CSS/inputField.css";
 
 // eslint-disable-next-line react/prop-types
-const InputField = ({ title, type, plchldr, label, onchange, value, error }) => {
+const InputField = ({ title, type, plchldr, label, onchange, value, error, pattern }) => {
   
 
   return (
@@ -30,6 +30,8 @@ const InputField = ({ title, type, plchldr, label, onchange, value, error }) => 
         placeholder={plchldr}
         minLength={4}
         value ={value}
+        pattern={pattern}
+        required
       />
     </div>
   );
