@@ -10,11 +10,6 @@ const InputField = ({ title, type, plchldr, label, onchange, value, error, patte
       <label htmlFor={title}>{label}</label>
       <div
         className="error-msg"
-        // style={
-        //   InputText.length == 0
-        //     ? { visibility: "visible" }
-        //     : { visibility: "hidden" }
-        // }
       >
         {error}
       </div>
@@ -31,7 +26,7 @@ const InputField = ({ title, type, plchldr, label, onchange, value, error, patte
         minLength={4}
         value ={value}
         pattern={pattern}
-        required
+        
       />
     </div>
   );

@@ -3,7 +3,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const Buttons = ({ pathBack, pathFor, text, btnId, check, onclick }) => {
+const Buttons = ({ pathBack, pathFor, text, btnId, check, onclick, show, executeDefault}) => {
   const navigate = useNavigate();
   const current = useLocation();
 
@@ -18,25 +18,28 @@ const Buttons = ({ pathBack, pathFor, text, btnId, check, onclick }) => {
 
   return (
     <div className="buttons" >
-      <Link className="back-text" to={pathBack}>
+      <Link className="back-text" to={pathBack} style={{display: show ? "block" : "none"}}>
         Go Back
       </Link>
-      <button
+      <button style={{marginLeft: "auto"}}
         id={btnId}
         onClick={() => {
             
-          
+          if (executeDefault) {
+            if (check) {
+              alert("Please select an option");
+            } else {
+              navigate(pathFor);
+            }
+          }
           
           
             
               
-                // e.preventDefault();
+                
 
-                if (check) {
-                  alert("Please select an option");
-                } else {
-                  navigate(pathFor);
-                }
+                
+                
                 onclick()
             
           

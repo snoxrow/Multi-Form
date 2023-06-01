@@ -99,4 +99,13 @@ button {
   .tiers-wrapper {
     flex-direction: column;
   }
+
+  .steps-wrapper {
+    width: 90%;
+    padding: 0;
+    margin: 0;
+  }
+  .right-side {
+    margin-inline: 0;
+  }
 }

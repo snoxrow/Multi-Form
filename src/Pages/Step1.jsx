@@ -3,6 +3,7 @@ import InputField from "../components/InputField";
 import { useNavigate } from "react-router-dom";
 import Heading from "../components/Heading";
 import { useEffect } from "react";
+import Buttons from "../components/Buttons";
 
 const Step1 = () => {
   const [inputValues, setInputValues] = useState({
@@ -97,6 +98,13 @@ const Step1 = () => {
     if (inputValues.phone === "") {
       tempErr.phone = "This Field is required";
       isValid = false;
+    } else if (
+      !/^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/.test(
+        inputValues.phone
+      )
+    ) {
+      tempErr.phone = "Invalid Format";
+      isValid = false;
     } else {
       tempErr.phone = "";
     }
@@ -136,7 +144,6 @@ const Step1 = () => {
           onchange={(value) => handleOnChange("email", value)}
           value={inputValues.email}
           error={inputErrors.email}
-          pattern=""
         />
         <InputField
           title="phone"
@@ -148,15 +155,9 @@ const Step1 = () => {
           error={inputErrors.phone}
         />
 
-        <button
-          id="step1-btn"
-          type="submit"
-          onClick={() => onSubmit()}
-          style={{ position: "absolute", bottom: "-42%" }}
-        >
-          Next Step
-        </button>
+        
       </form>
+      <Buttons pathFor="/plans" text="Next Step" check={false} onclick={()=> onSubmit()} executeDefault={false}/>
     </div>
   );
 };

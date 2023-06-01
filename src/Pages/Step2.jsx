@@ -76,7 +76,7 @@ const Step2 = () => {
     setSelected(index);
   };
   return (
-    <div>
+    <div className="steps-wrapper">
       <Heading
         h1="Select your plan"
         p="You have the option of monthly or yearly billing."
@@ -137,7 +137,7 @@ const Step2 = () => {
           Yearly
         </p>
       </div>
-      <Buttons pathBack="/" pathFor="/addons" text="Next Step" check={!checkStep}/>
+      <Buttons pathBack="/" pathFor="/addons" text="Next Step" check={!checkStep} executeDefault={true} show={true}/>
     </div>
   );
 };

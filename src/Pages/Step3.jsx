@@ -20,7 +20,8 @@ useEffect(()=> {
   setOption2(Option2 === "true" ? true : false)
   setOption3(Option3 === "true" ? true : false)
 
-  setBilling(billedBasis === "true"  ? true : false)
+  setBilling(billedBasis === "true" || billedBasis === null ? true : false)
+  console.log(billedBasis)
 },[])
 
   const updateAddOns = (key,option) => {
@@ -69,7 +70,7 @@ useEffect(()=> {
 
           option={option3}
       />
-      <Buttons pathBack="/plans" pathFor="/summary" text="Next Step" check={false}/>
+      <Buttons pathBack="/plans" pathFor="/summary" text="Next Step" check={false} executeDefault={true} show={true}/>
     </div>
   );
 };

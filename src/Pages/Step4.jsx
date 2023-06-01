@@ -21,7 +21,7 @@ const Step4 = () => {
     const option2 = localStorage.getItem("option2");
     const option3 = localStorage.getItem("option3");
 
-    selection === "true" ? setTime(true) : setTime(false);
+    selection === "true" || selection === null ? setTime(true) : setTime(false);
     option1 === "true" ? setOption1(true) : setOption1(false);
     option2 === "true" ? setOption2(true) : setOption2(false);
     option3 === "true" ? setOption3(true) : setOption3(false);
@@ -116,7 +116,9 @@ const Step4 = () => {
           pathFor="/confirmation"
           text="Confirm"
           btnId="Step4-btn"
-          onclick={() => localStorage.clear()}
+          onclick={() => localStorage.clear()
+          }
+          executeDefault={true} show={true}
         />
       </div>
     </div>
